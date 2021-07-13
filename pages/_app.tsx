@@ -37,7 +37,8 @@ const theme: DefaultTheme = {
     main: 'red',
   },
   sizes: {
-    mobile: '860px',
+    mobile: 860,
+    borderRadius: 8,
   },
 }
 

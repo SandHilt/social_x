@@ -9,7 +9,8 @@ declare module 'styled-components' {
       main: string
     }
     sizes: {
-      mobile: string
+      mobile: number
+      borderRadius: number
     }
   }
 }
