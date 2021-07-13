@@ -1,4 +1,4 @@
-import { ReactElement } from 'react'
+import { ReactElement, useState } from 'react'
 import styled from 'styled-components'
 
 import { Box, MainGrid } from '../src/components'
@@ -6,7 +6,7 @@ import { Box, MainGrid } from '../src/components'
 const Profile = styled.section`
   grid-area: profile;
   display: none;
-  @media (min-width: ${({ theme }) => theme.sizes.mobile}) {
+  @media (min-width: ${({ theme }) => theme.sizes.mobile}px) {
     display: block;
   }
 `
@@ -17,16 +17,32 @@ const ProfileRelations = styled.section`
   grid-area: profileRelations;
 `
 
+const ProfileImage = styled.img`
+  border-radius: ${({ theme }) => theme.sizes.borderRadius}px;
+`
+
+interface ProfileSidebarProps {
+  gitHubUser: string
+}
+
+function ProfileSidebar({ gitHubUser }: ProfileSidebarProps): ReactElement {
+  return (
+    <Box>
+      <ProfileImage
+        src={`https://github.com/${gitHubUser}.png`}
+        alt="Minha foto de perfil"
+      />
+    </Box>
+  )
+}
+
 export default function Home(): ReactElement {
+  const [gitHubUser] = useState('sandhilt')
+
   return (
     <MainGrid>
       <Profile>
-        <Box>
-          <img
-            src="https://github.com/sandhilt.png"
-            alt="Minha foto de perfil"
-          />
-        </Box>
+        <ProfileSidebar {...{ gitHubUser }} />
       </Profile>
       <Welcome>
         <Box>Bem vindo</Box>
