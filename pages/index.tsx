@@ -7,11 +7,18 @@ const Box = styled.section`
 `
 
 const MainGrid = styled.main`
-  display: grid;
+  width: 100%;
   grid-gap: 10px;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+
   padding: 16px;
 
-  @media (min-width: 860px) {
+  @media (min-width: ${({ theme }) => theme.sizes.mobile}) {
+    max-width: 1110px;
+    display: grid;
     grid-template-areas: 'profile welcome profileRelations';
     grid-template-columns: 160px 1fr 312px;
   }
@@ -19,6 +26,10 @@ const MainGrid = styled.main`
 
 const Profile = styled.section`
   grid-area: profile;
+  display: none;
+  @media (min-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: block;
+  }
 `
 const Welcome = styled.section`
   grid-area: welcome;

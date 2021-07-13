@@ -1,6 +1,10 @@
 import { AppProps } from 'next/dist/next-server/lib/router/router'
 import { ReactElement } from 'react'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import {
+  createGlobalStyle,
+  DefaultTheme,
+  ThemeProvider,
+} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   /** Reset CSS */
@@ -22,9 +26,12 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const theme = {
+const theme: DefaultTheme = {
   colors: {
-    primary: 'red',
+    main: 'red',
+  },
+  sizes: {
+    mobile: '860px',
   },
 }
 
