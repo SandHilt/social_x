@@ -1,28 +1,7 @@
 import { ReactElement } from 'react'
 import styled from 'styled-components'
 
-const Box = styled.section`
-  background-color: #fff;
-  border-radius: 0.5rem;
-`
-
-const MainGrid = styled.main`
-  width: 100%;
-  grid-gap: 10px;
-
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 500px;
-
-  padding: 16px;
-
-  @media (min-width: ${({ theme }) => theme.sizes.mobile}) {
-    max-width: 1110px;
-    display: grid;
-    grid-template-areas: 'profile welcome profileRelations';
-    grid-template-columns: 160px 1fr 312px;
-  }
-`
+import { Box, MainGrid } from '../src/components'
 
 const Profile = styled.section`
   grid-area: profile;
@@ -42,7 +21,12 @@ export default function Home(): ReactElement {
   return (
     <MainGrid>
       <Profile>
-        <Box>Imagem</Box>
+        <Box>
+          <img
+            src="https://github.com/sandhilt.png"
+            alt="Minha foto de perfil"
+          />
+        </Box>
       </Profile>
       <Welcome>
         <Box>Bem vindo</Box>
