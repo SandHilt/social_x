@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-export default styled.section`
+const Box = styled.section`
   background-color: #fff;
   border-radius: 0.5rem;
 `
+
+export default Box

@@ -1,7 +1,6 @@
-import { ReactElement, ReactNode } from 'react'
 import styled from 'styled-components'
 
-const Container = styled.main`
+const MainGrid = styled.main`
   width: 100%;
   grid-gap: 10px;
 
@@ -19,10 +18,4 @@ const Container = styled.main`
   }
 `
 
-interface MainGridProps {
-  children: ReactNode
-}
-
-export default function MainGrid({ children }: MainGridProps): ReactElement {
-  return <Container>{children}</Container>
-}
+export default MainGrid
