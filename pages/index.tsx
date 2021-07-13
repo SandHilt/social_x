@@ -1,10 +1,16 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
+const Box = styled.section`
+  background-color: #fff;
+  border-radius: 8px;
+`;
 
 export default function Home() {
-  return <Title>My page</Title>
+  return (
+    <main>
+      <Box>Imagem</Box>
+      <Box>Bem vindo</Box>
+      <Box>Comunidades</Box>
+    </main>
+  );
 }
