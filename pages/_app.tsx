@@ -9,18 +9,18 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const theme = {
-    colors: {
-        primary: 'red',
-    },
+  colors: {
+    primary: 'red',
+  },
 }
 
 export default function App({ Component, pageProps }: AppProps): ReactElement {
-    return (
-        <>
-            <GlobalStyle />
-            <ThemeProvider theme={theme}>
-                <Component {...pageProps} />
-            </ThemeProvider>
-        </>
-    )
+  return (
+    <>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
+  )
 }
